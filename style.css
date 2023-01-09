@@ -1,0 +1,160 @@
+/* Variables of Colors */
+:root {
+        /* Primary Colors */
+    --softColor--: hsl(215, 51%, 70%);
+    --cyanColor--: hsl(178, 100%, 50%);
+        /* Neutral Colors */
+    --mainColor--: hsl(217, 54%, 11%);
+    --cardColor--: hsl(216, 50%, 16%);
+    --lineColor--: hsl(215, 32%, 27%);
+    --whiteColor--: hsl(0, 0%, 100%);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--mainColor--);
+}
+/* Mobile Screen First */
+body {
+    width: 375px;
+    padding: 0 1em;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-color: var(--cardColor--);
+    box-shadow: 0px 0px 10px 10px hsl(217deg 84% 4%);
+    margin: 2em 0em;
+    padding: 2em 2em;
+    border-radius: 15px;
+}
+main .images {
+    width: 100%;
+    position: relative;
+}
+main .images::after {
+    content: url(images/icon-view.svg);
+    background-color: #00ffff66;
+    width: 100%;
+    height: 99%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    opacity: 0;
+}
+main .images:hover::after {
+    opacity: 1;
+    cursor: pointer;
+    transition: 0.5s;
+}
+main .images .equilibrium {
+    width: 100%;
+    border-radius: 12px;
+}
+main .content {
+    height: 20vh;
+}
+main .content h1 {
+    color: var(--whiteColor--);
+    font-size: 2rem;
+}
+main .content h1:hover{
+    cursor: pointer;
+    color: var(--cyanColor--);
+    transition: 0.5s;
+}
+main .content p {
+    color: var(--softColor--);
+    padding: 1em 0;
+    line-height: 1.5;
+    font-weight: 300;
+    font-size: 1rem;
+}
+main .price-sec {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+}
+main .price-sec .price {
+    color: var(--cyanColor--);
+    font-weight: 700;
+}
+main .price-sec .time {
+    color: var(--softColor--);
+}
+main .price-sec span > img {
+    padding-right: 5px;
+}
+main hr {
+    background-color: hsl(215deg 51% 70%);
+    width: 100%;
+    border-radius: 100px;
+    opacity: 0.3;
+}
+main .user-info {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+main .user-info > img {
+    width: 15%;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+main .user-info > span {
+    padding-left: 1em;
+    color: var(--softColor--);
+}
+main .user-info > span .name {
+    color:hsl(0, 0%, 100%)
+}
+main .user-info > span .name:hover {
+    cursor: pointer;
+    color: var(--cyanColor--);
+    transition: 0.5s;
+}
+footer {
+    color: var(--whiteColor--);
+    text-align: center;
+}
+footer a {
+    color: var(--cyanColor--);
+}
+/* Desktop Screen */
+@media(min-width: 799px) {
+    body {
+        width: 1440px;
+        padding: 5em 30em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    main {
+        max-height: 90vh;
+        max-width: 80%;
+        padding: 2em 2em;
+    }
+    main .content {
+        max-height: 16vh;
+    }
+    main .content h1 {
+        font-size: 1.5rem;
+        max-width: 62%;
+    }
+    main .content p {
+        font-size: 1.2rem;
+    }
+}
